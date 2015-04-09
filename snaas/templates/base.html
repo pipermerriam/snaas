@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Snorse as a Service{% endblock %}</title>
-        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
 
         {% stylesheet 'base' %}
         {% stylesheet 'highlight' %}
@@ -40,6 +40,9 @@
                         <li>
                             <a href="#snorse">API</a>
                         </li>
+                        <li>
+                            <a href="#documentation">Documentation</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -67,6 +70,10 @@
                             <li class="footer-menu-divider">&sdot;</li>
                             <li>
                                 <a href="#snorse">API</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#documentation">Documentation</a>
                             </li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; Snorse 2015. All Snowmen Reserved</p>
