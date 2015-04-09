@@ -34,3 +34,6 @@ node_modules/
 snaas/public/*
 !snaas/public/static/.gitkeep
 !snaas/public/media/.gitkeep
+
+# .env
+.env
