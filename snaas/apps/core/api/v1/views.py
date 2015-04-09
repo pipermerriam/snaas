@@ -6,7 +6,7 @@ import snorse
 
 @csrf_exempt
 def snorse_view(request, *args, **kwargs):
-    return HttpResponse(snorse.snorse(request.body))
+    return HttpResponse(snorse.snorse(unicode(request.body, encoding='utf8')))
 
 
 @csrf_exempt
