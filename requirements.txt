@@ -26,3 +26,7 @@ rollbar==0.9.8
 
 # Snorse
 snorse==1.0.0
+
+# Stuff
+ipython
+readline
