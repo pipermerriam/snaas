@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = patterns(
     '',
-    url(r'^/snorse/$', views.SnorseAPIView.as_view(), name='snorse'),
-    url(r'^/de-snorse/$', views.DeSnorseAPIView.as_view(), name='desnorse'),
+    url(r'^snorse/$', views.snorse_view, name='snorse'),
+    url(r'^de-snorse/$', views.desnorse_view, name='desnorse'),
 )

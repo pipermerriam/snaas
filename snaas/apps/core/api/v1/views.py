@@ -1,18 +1,18 @@
-from rest_framework import views
-from rest_framework import response
+from django.http.response import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 import snorse
 
 
-class SnorseAPIView(views.APIView):
-    def post(self, *args, **kwargs):
-        return response.Response(snorse.snorse(self.request.stream.body))
+@csrf_exempt
+def snorse_view(request, *args, **kwargs):
+    return HttpResponse(snorse.snorse(request.body))
 
 
-class DeSnorseAPIView(views.APIView):
-    def post(self, *args, **kwargs):
-        return response.Response(
-            snorse.desnorse(
-                unicode(self.request.stream.body, encoding='utf8'),
-            ),
-        )
+@csrf_exempt
+def desnorse_view(request, *args, **kwargs):
+    return HttpResponse(
+        snorse.desnorse(
+            unicode(request.body, encoding='utf8'),
+        ),
+    )
