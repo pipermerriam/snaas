@@ -30,3 +30,4 @@ snorse==1.0.0
 # Stuff
 ipython
 readline
+gunicorn==19.3.0
