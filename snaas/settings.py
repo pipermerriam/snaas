@@ -25,7 +25,9 @@ ALLOWED_HOSTS = excavator.env_list('DJANGO_ALLOWED_HOSTS', required=not DEBUG)
 
 INSTALLED_APPS = (
     # django
+    'django.contrib.contenttypes',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # local project
     'snaas.apps.core',
     # django 3rd party
