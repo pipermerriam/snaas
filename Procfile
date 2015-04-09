@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath="$PWD/snaas" wsgi:application
+web: gunicorn snaas.wsgi -c snaas/gunicorn.conf -w 3
