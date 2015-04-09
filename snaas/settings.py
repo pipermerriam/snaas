@@ -26,6 +26,7 @@ ALLOWED_HOSTS = excavator.env_list('DJANGO_ALLOWED_HOSTS', required=not DEBUG)
 INSTALLED_APPS = (
     # django
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # local project
     'snaas.apps.core',
     # django 3rd party
@@ -146,9 +147,17 @@ PIPELINE_CSS = {
     'base': {
         'source_filenames': (
             "css/bootstrap.css",
+            "css/landing-page.css",
+            "font-awesome/css/font-awesome.css",
             "css/project.css",
         ),
         'output_filename': 'css/base.css',
+    },
+    'highlight': {
+        'source_filenames': (
+            "css/zenburn.css",
+        ),
+        'output_filename': 'css/zenburn.css',
     },
 }
 
@@ -160,6 +169,12 @@ PIPELINE_JS = {
             "js/project.js",
         ),
         'output_filename': 'js/base.js',
+    },
+    'highlight': {
+        'source_filenames': (
+            "js/highlight.pack.js",
+        ),
+        'output_filename': 'js/highlight.js',
     },
 }
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
