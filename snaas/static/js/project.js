@@ -1,6 +1,6 @@
 $(function() {
     var textArea = $("#plainText");
-    var snorseText = $("#snorseText");
+    var snorseArea = $("#snorseText");
 
     var snorseIt = function(event) {
         $.ajax(
@@ -8,12 +8,25 @@ $(function() {
                 method: 'POST',
                 data: textArea.val(),
                 success: function(data, textStatus, jqXHR) {
-                    snorseText.html(data);
+                    snorseArea.val(data);
                 }
             }
         );
     };
 
-    textArea.on("blur change keyup", snorseIt);
+    var desnorseIt = function(event) {
+        $.ajax(
+            "/api/v1/desnorse/", {
+                method: 'POST',
+                data: snorseArea.val(),
+                success: function(data, textStatus, jqXHR) {
+                    textArea.val(data);
+                }
+            }
+        );
+    };
+
+    textArea.on("blur keyup", snorseIt);
+    snorseArea.on("blur keyup", desnorseIt);
     snorseIt();
 });
