@@ -93,6 +93,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'snaas', 'static'),
 )
 
+# Static file finders.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
 # Email Settings
 EMAIL_BACKEND = excavator.env_string(
     'DJANGO_EMAIL_BACKEND',
