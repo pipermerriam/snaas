@@ -128,9 +128,9 @@ abc
                             <div role="tabpanel" class="tab-pane active" id="snorse-bash-tab">
                                 <pre>
                                     <code class="bash">
-$ CURL -X POST "http://snorse-as-a-service.herokuapp.com/api/v1/snorse/" -d "abc"
+$ CURL -X POST "http://www.snorse-cloud.com/api/v1/snorse/" -d "abc"
 ☃ ⛄⛄⛄   ⛄⛄⛄ ☃ ☃ ☃   ⛄⛄⛄ ☃ ⛄⛄⛄ ☃
-$ CURL -X POST "http://snorse-as-a-service.herokuapp.com/api/v1/desnorse/" -d "☃ ⛄⛄⛄   ⛄⛄⛄ ☃ ☃ ☃   ⛄⛄⛄ ☃ ⛄⛄⛄ ☃"
+$ CURL -X POST "http://www.snorse-cloud.com/api/v1/desnorse/" -d "☃ ⛄⛄⛄   ⛄⛄⛄ ☃ ☃ ☃   ⛄⛄⛄ ☃ ⛄⛄⛄ ☃"
 abc
                                     </code>
                                 </pre>
@@ -139,10 +139,10 @@ abc
                                 <pre>
                                     <code class="python">
 >>> import requests
->>> response = requests.post("http://snorse-as-a-service.herokuapp.com/api/v1/snorse/", 'abc')
+>>> response = requests.post("http://www.snorse-cloud.com/api/v1/snorse/", 'abc')
 >>> print response.content
 ☃ ⛄⛄⛄   ⛄⛄⛄ ☃ ☃ ☃   ⛄⛄⛄ ☃ ⛄⛄⛄ ☃
->>> print requests.post("http://snorse-as-a-service.herokuapp.com/api/v1/desnorse/", response.content)
+>>> print requests.post("http://www.snorse-cloud.com/api/v1/desnorse/", response.content)
 abc
                                     </code>
                                 </pre>
@@ -169,7 +169,7 @@ abc
                     <h2 class="section-heading">Documentation</h2>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><code>POST http://snorse-as-a-service.herokuapp.com/api/v1/snorse/</code></h3>
+                            <h3 class="panel-title"><code>POST http://www.snorse-cloud.com/api/v1/snorse/</code></h3>
                         </div>
                         <div class="panel-body">
                             <p class="lead">Returns the body of the post
@@ -179,7 +179,7 @@ abc
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><code>POST http://snorse-as-a-service.herokuapp.com/api/v1/desnorse/</code></h3>
+                            <h3 class="panel-title"><code>POST http://www.snorse-cloud.com/api/v1/desnorse/</code></h3>
                         </div>
                         <div class="panel-body">
                             <p class="lead">Returns the body of the post
