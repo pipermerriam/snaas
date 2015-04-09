@@ -1,0 +1,1 @@
+default_app_config = 'snaas.apps.core.config.SnaasConfig'
