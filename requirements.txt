@@ -31,3 +31,5 @@ snorse==1.0.0
 ipython
 readline
 gunicorn==19.3.0
+django-pipeline==1.4.7
+manifesto==0.5

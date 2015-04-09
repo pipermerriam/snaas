@@ -30,3 +30,7 @@ node_modules/
 
 # Campass
 .sass-cache
+
+snaas/public/*
+!snaas/public/static/.gitkeep
+!snaas/public/media/.gitkeep

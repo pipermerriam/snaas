@@ -6,6 +6,7 @@ from snaas.apps.core import views
 
 
 urlpatterns = patterns(
+    '',
     # Site Home Page
     url(r'^$', views.SiteIndexView.as_view(), name='site-index'),
 

@@ -24,11 +24,13 @@ ALLOWED_HOSTS = excavator.env_list('DJANGO_ALLOWED_HOSTS', required=not DEBUG)
 # Application definition
 
 INSTALLED_APPS = (
+    # django
     'django.contrib.staticfiles',
     # local project
     'snaas.apps.core',
-    # local apps
-    # django admin
+    # django 3rd party
+    'pipeline',
+    'manifesto',
 )
 
 MIDDLEWARE_CLASSES = []
@@ -67,13 +69,13 @@ USE_TZ = True
 STATIC_URL = excavator.env_string('DJANGO_STATIC_URL', default='/static/')
 STATIC_ROOT = excavator.env_string(
     'DJANGO_STATIC_ROOT',
-    default=os.path.join(BASE_DIR, 'static'),
+    default=os.path.join(BASE_DIR, 'snaas', 'public', 'static'),
 )
 
 MEDIA_URL = excavator.env_string('DJANGO_MEDIA_URL', default='/media/')
 MEDIA_ROOT = excavator.env_string(
     'DJANGO_MEDIA_ROOT',
-    default=os.path.join(BASE_DIR, 'media'),
+    default=os.path.join(BASE_DIR, 'snaas', 'public', 'media'),
 )
 
 DEFAULT_FILE_STORAGE = excavator.env_string(
@@ -86,7 +88,7 @@ STATICFILES_STORAGE = excavator.env_string(
 )
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'snaas', 'public'),
+    os.path.join(BASE_DIR, 'snaas', 'static'),
 )
 
 # Email Settings
@@ -131,6 +133,37 @@ AWS_HEADERS = {
     "Cache-Control": "public, max-age=86400",
 }
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'snaas', 'templates'),
+)
+
+# Django Pipeline Settings
+PIPELINE_DISABLE_WRAPPER = excavator.env_bool(
+    'DJANGO_PIPELINE_DISABLE_WRAPPER', default=True,
+)
+PIPELINE_ENABLED = excavator.env_bool('DJANGO_PIPELINE_ENABLED', not DEBUG)
+PIPELINE_CSS = {
+    'base': {
+        'source_filenames': (
+            "css/bootstrap.css",
+            "css/project.css",
+        ),
+        'output_filename': 'css/base.css',
+    },
+}
+
+PIPELINE_JS = {
+    'base': {
+        'source_filenames': (
+            "js/jquery.js",
+            "js/bootstrap.js",
+            "js/project.js",
+        ),
+        'output_filename': 'js/base.js',
+    },
+}
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
 
 if DEBUG:
     TEMPLATE_LOADERS = (
