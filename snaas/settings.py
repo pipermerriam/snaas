@@ -204,3 +204,10 @@ else:
             'django.template.loaders.app_directories.Loader',
         )),
     )
+
+REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'snaas.apps.core.api.versioning.AcceptHeaderTupleVersioning',
+    'DEFAULT_RENDERER_CLASSES': (
+        'snaas.apps.core.api.rendering.SnaasVersionedText',
+    ),
+}
